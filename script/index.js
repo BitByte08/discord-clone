@@ -9,7 +9,7 @@ fetch('data.json').then((response)=>{return response.json()})
                                     </div>
                                     <div class="name" id="${item['id']}">${item['name']}</div>
                                     <img class="user-frofile-img" alt="" src="${item['img']}">
-                                    <img class="component-12-icon1" alt="" src="/source/frofile_icon/Online_no.svg">
+                                    <img class="component-12-icon1" alt="" src="source/frofile_icon/Online_no.svg">
                                 </div>`
         }else{
             DMlist[0].innerHTML+=`<div class="dm1" id="no">
@@ -17,7 +17,7 @@ fetch('data.json').then((response)=>{return response.json()})
                                     </div>
                                     <div class="name" id="${item['id']}">${item['name']}</div>
                                     <img class="user-frofile-img" alt="" src="${item['img']}">
-                                    <img class="component-12-icon1" alt="" src="/source/frofile_icon/Offline_no.svg">
+                                    <img class="component-12-icon1" alt="" src="source/frofile_icon/Offline_no.svg">
                                 </div>`
         }
     })
