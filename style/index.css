@@ -185,6 +185,13 @@
     display: inline-block;
     width: 213px;
 }
+.div2{
+    background-color: #202226;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+}
 
 .finder {
     position: absolute;
@@ -386,7 +393,7 @@
     height: 23px;
 }
 
-.rectangle-div {
+.rectangle-div1 {
     position: absolute;
     top: 13px;
     left: 0px;
@@ -603,8 +610,8 @@ body {
     top: 13px;
     left: 11px;
 }
-.rectangle-div {
-    width: calc(100% - 415px);
+.rectangle-div1 {
+    width: calc(calc(100% - 415px) - 400px);
     position: fixed;
     background-color: #37393F;
     border: none;
@@ -613,7 +620,7 @@ body {
     height: 100%;
     padding: 20px 50px 0 50px;
 }
-.rectangle-div > input{
+.rectangle-div1 > input{
     padding-left: 8px;
     width: 100%;
     height: 35px;
@@ -630,3 +637,33 @@ input:focus{
     outline: none;
 }
 
+.icon_c18ec9_visible_c18ec9{
+    position: absolute;
+    top: 26px;
+    right: 50px;
+}
+@media (max-width: 1200px){
+    .activity{
+        display: none;
+    }
+    .rectangle-div1{
+        width: calc(100% - 415px);
+    }
+}
+@media (min-width: 1201px){
+    .activity{
+        display: block;
+    }
+    .rectangle-div1{
+        width: calc(calc(100% - 415px) - 400px);
+    }
+}
+.activity{
+    position: fixed;
+    right: 0px;
+    top: 65px;
+    border-left: 1px solid gray;
+    width: 400px;
+    height: 100%;
+    padding-left: 15px;
+}
