@@ -1,12 +1,15 @@
 {
     "user":[
         {
-            "id":1,
+            "id":0,
             "name":"user1",
-            "img":"",
+            "img":"/다운로드 (3).png",
             "state":"online"
         },{
-
+            "id":1,
+            "name":"user2",
+            "img":"/다운로드 (3).png",
+            "state":"offline"
         }
     ]
 }

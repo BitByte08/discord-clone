@@ -46,7 +46,6 @@
     width: 300px;
     height: 55px;
 }
-
 .humen-icon {
     position: absolute;
     top: 17px;
@@ -117,7 +116,7 @@
     left: 0px;
 }
 
-.select2 {
+.select1 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -125,6 +124,11 @@
     background-color: #2f3137;
     width: 300px;
     height: 55px;
+    transition-timing-function:ease-in-out;
+    transition-duration: 0.25s;
+}
+.select1:hover{
+    background-color: #35373D;
 }
 
 .friends-list {
@@ -539,6 +543,7 @@
 }
 
 .sidebar {
+    overflow-y: auto;
     position: fixed;
     height: 100%;
     top: 0px;
@@ -563,7 +568,7 @@
 body {
     overflow-y: hidden;
     background-color: #37393f;
-    min-width: 1000px;
+    min-width: 1200px;
     min-height: 500px;
 }
 
@@ -598,3 +603,30 @@ body {
     top: 13px;
     left: 11px;
 }
+.rectangle-div {
+    width: calc(100% - 415px);
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: 100%;
+    padding: 20px 50px 0 50px;
+}
+.rectangle-div > input{
+    padding-left: 8px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #202226;
+    border-radius: 5px;
+    color:white;
+    font-size: 16px;
+}
+input::placeholder{
+    font-size: 16px;
+}
+input:focus{
+    outline: none;
+}
+
