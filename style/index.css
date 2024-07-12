@@ -612,7 +612,7 @@ hr{
 .onlineuser> span{
     position: relative;
     top: -22px;
-    left: -30px;
+    left: -33px;
     font-weight:500;
 }
 .onlineuser> P{
@@ -645,10 +645,10 @@ hr{
 
 .component-12-icon2 {
     position: relative;
-    top: 5px;
+    top: 9px;
     left: -40px;
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 53px;
 }
 .component-12-icon1 {
     position: absolute;
@@ -700,6 +700,59 @@ hr{
     height: 100%;
     padding: 20px 50px 0 50px;
 }
+
+.chatdisplay{
+    box-sizing:border-box;
+    width: calc(calc(100% - 415px));
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: calc(100% - 65px);
+    padding: 0 50px;
+}
+.chatdisplay > img{
+    position: absolute;
+    left: 40.5px;
+    height: 14px;
+    width: 14px;
+    top: calc(100% - 42.5px);
+    z-index: 999;
+}
+.chatdisplay > input{
+    box-sizing: border-box;
+    position:absolute;
+    top: calc(100% - 55px);
+    border: none;
+    background-color: #454850;
+    border-radius: 10px;
+    padding-left: 55px;
+    height: 40px;
+    left: 20px;
+    width: calc(100% - 40px);
+    font-size: 18px;
+    color: white;
+}
+.chatlist{
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow-y: auto;
+}
+.chatNode{
+    position: relative;
+    bottom: 0;
+}
+.add-btn-child2 {
+    position: absolute;
+    top: calc(calc(100% - 48px));
+    left: 35px;
+    border-radius: 33px;
+    background-color: #C6C7CB;
+    width: 25px;
+    height: 25px;
+    z-index: 998;
+}
 .addfriends{
     box-sizing:border-box;
     width: calc(calc(100% - 415px) - 400px);
@@ -713,6 +766,28 @@ hr{
 
 }
 .allfriends{
+    box-sizing:border-box;
+    width: calc(calc(100% - 415px) - 400px);
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: 100%;
+    padding: 20px 50px 0 50px;
+}
+.request{
+    box-sizing:border-box;
+    width: calc(calc(100% - 415px) - 400px);
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: 100%;
+    padding: 20px 50px 0 50px;
+}
+.block{
     box-sizing:border-box;
     width: calc(calc(100% - 415px) - 400px);
     position: fixed;
@@ -775,16 +850,24 @@ input::placeholder{
     top: 26px;
     right: 50px;
 }
-
+.request > span{
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 122.81px);
+    color: #afb1b5;
+}
+.block > span{
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 101.03px);
+    color: #afb1b5;
+}
 
 @media (max-width: 1200px){
     .activity{
         display: none;
     }
-    .rectangle-div1,.allfriends{
-        width: calc(100% - 415px);
-    }
-    .addfriends{
+    .rectangle-div1,.allfriends,.addfriends,.request,.block{
         width: calc(100% - 415px);
     }
 }
@@ -792,10 +875,7 @@ input::placeholder{
     .activity{
         display: block;
     }
-    .rectangle-div1,.allfriends{
-        width: calc(calc(100% - 415px) - 400px);
-    }
-    .addfriends{
+    .rectangle-div1,.allfriends,.addfriends.request,.block{
         width: calc(calc(100% - 415px) - 400px);
     }
 }
@@ -861,4 +941,10 @@ input::placeholder{
     border: none;
     border-radius: 5px;
 
+}
+#mainon{
+    display: block;
+}
+#mainoff{
+    display: none;
 }

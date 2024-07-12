@@ -3,12 +3,12 @@
         {
             "id":0,
             "name":"user1",
-            "img":"다운로드 (3).png",
+            "img":"source/frofile/discord_blue.png",
             "state":"online"
         },{
             "id":1,
             "name":"user2",
-            "img":"다운로드 (3).png",
+            "img":"source/frofile/discord_blue.png",
             "state":"offline"
         }
     ]

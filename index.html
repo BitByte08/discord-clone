@@ -22,20 +22,26 @@
                 </div>
             </div>
         </div>
-        <div class="info">
-            <div class="rectangle-div1" id="divoff">
+        <div class="info" id="mainon">
+            <div class="rectangle-div1" id="divon">
                 <input type="text" placeholder="검색하기">
                 <svg class="icon_c18ec9_visible_c18ec9" aria-label="검색하기" aria-hidden="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" clip-rule="evenodd" class=""></path></svg>
                 
             </div>
-            <div class="allfriends" id="divon">
+            <div class="allfriends" id="divoff">
                 <input type="text" placeholder="검색하기">
                 <svg class="icon_c18ec9_visible_c18ec9" aria-label="검색하기" aria-hidden="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" clip-rule="evenodd" class=""></path></svg>
                 
+            </div>
+            <div class="request" id="divoff">
+                <span>현재 친구 요청을 받을 수 없어요.</span>
+            </div>
+            <div class="block" id="divoff">
+                <span>차단한 친구가 아직 없어요.</span>
             </div>
             <div class="addfriends" id="divoff">
                 <h3>친구 추가하기</h3>
-                <p>사용자명을 입력하면 가상으로 친구를 추가할 수 있어요. 추가된 친구는 항상 온라인을 유지해요.</p>
+                <p>사용자명을 입력하면 가상으로 친구를 추가할 수 있어요. 추가된 친구는 항상 온라인을 유지해요. (최대 10명까지 지원)</p>
                 <input type="text" id="username" placeholder="사용자명을 사용하여 추가할 수 있어요.">
                 <button type="button" onclick="useradd()">친구 요청 보내기</button>
             </div>
@@ -43,7 +49,21 @@
                 <h3>현재 활동 중</h3>
             </div>
         </div>
-
+        <div class="chat" id="mainoff">
+            <div class="chatdisplay" id="user0" style="display: none;">
+                <div class="chatlist">
+                    <div class="chatNode">
+                        
+                    </div>
+                </div>
+                <div class="add-btn-child2">
+                </div>
+                <img src="source/icon/addchat.svg"><input type="text" placeholder="@user1에게 메시지 보내기" onKeyPress="if(event.keyCode==13){}">
+            </div>
+            <div class="chatdisplay" id="user1" style="display: none;">
+                
+            </div>
+        </div>
         <div class="frame-child">
         </div>
         <div class="setting-fill">
@@ -78,10 +98,10 @@
             </div>
             <div class="frame-parent">
                 <div class="component-6-parent">
-                    <div class="component-6" id="offmenu">
+                    <div class="component-6" id="onmenu">
                         <div class="div1">온라인</div>
                     </div>
-                    <div class="component-7" id="onmenu">
+                    <div class="component-7" id="offmenu">
                         <div class="div1">모두</div>
                     </div>
                     <div class="component-8" id="offmenu">
@@ -106,10 +126,10 @@
         <div class="user">
             <div class="user-child">
             </div>
-            <div class="janesmith">JaneSMITH</div>
-            <b class="janesmith1">JaneSMITH</b>
-            <img class="admin-frofile-img" alt="" src="다운로드 (3).png">
-            <img class="img-icon2" alt="" src="source/frofile_icon/Offline_admin.svg">
+            <div class="janesmith">admin</div>
+            <b class="janesmith1">admin</b>
+            <img class="admin-frofile-img" alt="" src="source/frofile/discord_blue.png">
+            <img class="img-icon2" alt="" src="source/frofile_icon/Online_admin.svg">
 
             <img class="mic" alt="" src="source/icon/Mic.svg">
             <img class="rectangle-group" alt="" src="source/icon/Headphone.svg">
