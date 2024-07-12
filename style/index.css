@@ -124,13 +124,16 @@
     background-color: #2f3137;
     width: 300px;
     height: 55px;
-    transition-timing-function:ease-in-out;
-    transition-duration: 0.25s;
 }
 .select1:hover{
     background-color: #35373D;
 }
-
+#offmenu:hover{
+    background-color: #3E4249;
+}
+#offmenu:hover.component-10{
+    background-color: #59a364;
+}
 .friends-list {
     position: absolute;
     height: auto;
@@ -211,21 +214,26 @@
     top: 0px;
     left: 0px;
     border-radius: 5px;
-    background-color: #454850;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 5px 12px;
+}
+#onmenu{
+    background-color: #454850;
     color: #fff;
 }
-
+#offmenu{
+    transition-timing-function:ease-in-out;
+    transition-duration: 0.125s;
+    background-color: #37393f;
+}
 .component-7 {
     position: absolute;
     top: 0px;
     left: 100px;
     border-radius: 5px;
-    background-color: #37393f;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -238,7 +246,6 @@
     top: 0px;
     left: 184px;
     border-radius: 5px;
-    background-color: #37393f;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -251,26 +258,36 @@
     top: 0px;
     left: 289px;
     border-radius: 5px;
-    background-color: #37393f;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 5px 12px;
 }
-
-.component-10 {
+#divon{
+    display: block;
+}
+#divoff{
+    display: none;
+}
+.component-10#onmenu{
+    background-color: #37393f;
+    color: #59a364;
+}
+.component-10#offmenu{
+    background-color: #59a364;
+    color: #fff;
+}
+.component-10{
     position: absolute;
     top: 0px;
     left: 410px;
     border-radius: 5px;
-    background-color: #59a364;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 5px 12px;
-    color: #fff;
 }
 
 .component-6-parent {
@@ -279,6 +296,8 @@
     left: 128px;
     width: 538px;
     height: 32px;
+    transition-duration: 1s;
+    transition: ease-in-out;
 }
 
 .frame-inner {
@@ -577,8 +596,60 @@ body {
     background-color: #37393f;
     min-width: 1200px;
     min-height: 500px;
+    max-height: 1080px;
+}
+hr{
+    border: 1px solid #414248;
 }
 
+
+.onlineuser{
+    width: 100%;
+    height: 80px;
+    border-top: 1.5px solid #414248;
+    border-radius: 10px;
+}
+.onlineuser> span{
+    position: relative;
+    top: -22px;
+    left: -30px;
+    font-weight:500;
+}
+.onlineuser> P{
+    position: relative;
+    top: -34px;
+    left: 81px;
+    color: #afb1b5;
+    font-size:medium;
+}
+
+.offlineuser{
+    width: 100%;
+    height: 80px;
+    border-top: 1.5px solid #414248;
+    border-radius: 10px;
+}
+.offlineuser > span{
+    position: relative;
+    top: -22px;
+    left: -30px;
+    font-weight:500;
+}
+.offlineuser > p{
+    position: relative;
+    top: -34px;
+    left: 81px;
+    color: #afb1b5;
+    font-size:medium;
+}
+
+.component-12-icon2 {
+    position: relative;
+    top: 5px;
+    left: -40px;
+    width: 50px;
+    height: 50px;
+}
 .component-12-icon1 {
     position: absolute;
     top: 6px;
@@ -602,6 +673,14 @@ body {
     top: 6px;
     left: 6px;
 }
+.user-frofile-img2{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    top: 5px;
+    left: 10px;
+}
 .admin-frofile-img{
     position: absolute;
     width: 44px;
@@ -611,6 +690,7 @@ body {
     left: 11px;
 }
 .rectangle-div1 {
+    box-sizing:border-box;
     width: calc(calc(100% - 415px) - 400px);
     position: fixed;
     background-color: #37393F;
@@ -619,6 +699,39 @@ body {
     left: 415px;
     height: 100%;
     padding: 20px 50px 0 50px;
+}
+.addfriends{
+    box-sizing:border-box;
+    width: calc(calc(100% - 415px) - 400px);
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: 100%;
+    padding: 0 50px 0 50px;
+
+}
+.allfriends{
+    box-sizing:border-box;
+    width: calc(calc(100% - 415px) - 400px);
+    position: fixed;
+    background-color: #37393F;
+    border: none;
+    top: 63px;
+    left: 415px;
+    height: 100%;
+    padding: 20px 50px 0 50px;
+}
+.addfriends > button{
+    position: relative;
+    top : -38px;
+    right: calc(-100% + 100px);
+    border: none;
+    background-color: #5a67e9;
+    color: white;
+    border-radius: 2px;
+    height: 30px;
 }
 .rectangle-div1 > input{
     padding-left: 8px;
@@ -629,12 +742,32 @@ body {
     border-radius: 5px;
     color:white;
     font-size: 16px;
+    margin-bottom: 20px;
+}
+.allfriends > input{
+    padding-left: 8px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #202226;
+    border-radius: 5px;
+    color:white;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.addfriends > input{
+    padding-left: 8px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    padding-left: 8px;
+    color: white;
+    border-radius: 5px;
+    background-color: #202226;
+    font-size: 18px;
 }
 input::placeholder{
     font-size: 16px;
-}
-input:focus{
-    outline: none;
 }
 
 .icon_c18ec9_visible_c18ec9{
@@ -642,11 +775,16 @@ input:focus{
     top: 26px;
     right: 50px;
 }
+
+
 @media (max-width: 1200px){
     .activity{
         display: none;
     }
-    .rectangle-div1{
+    .rectangle-div1,.allfriends{
+        width: calc(100% - 415px);
+    }
+    .addfriends{
         width: calc(100% - 415px);
     }
 }
@@ -654,7 +792,10 @@ input:focus{
     .activity{
         display: block;
     }
-    .rectangle-div1{
+    .rectangle-div1,.allfriends{
+        width: calc(calc(100% - 415px) - 400px);
+    }
+    .addfriends{
         width: calc(calc(100% - 415px) - 400px);
     }
 }
@@ -662,8 +803,62 @@ input:focus{
     position: fixed;
     right: 0px;
     top: 65px;
-    border-left: 1px solid gray;
-    width: 400px;
+    border-left: 1px solid #414248;
+    width: 384px;
     height: 100%;
     padding-left: 15px;
+}
+.addfriends > p{
+    font-size: smaller;
+    color: #8e9096;
+}
+
+#error{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color : rgba(0, 0, 0, 0.738);
+    z-index: 999;
+}
+#error > div{
+    box-sizing:border-box;
+    background-color: #414248;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    z-index: 1000;
+    padding: 20px 30px;
+}
+#error > div > span{
+    font-weight: bold;
+}
+#error > div > div{
+    width: 400px;
+    height: 70px;
+    background-color: #37393F;
+    position: absolute;
+    bottom: 0;
+    z-index: 1001;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+}
+#error > div > div > button{
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    font-size: 16px;
+    width: 80px;
+    top: 20px;
+    background-color: #5a67e9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+
 }
