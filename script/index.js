@@ -8,6 +8,13 @@ let TopUserlist = document.getElementsByClassName('topusername');
 let SectionBtnMenu = document.getElementsByClassName('frame-parent');
 
 
+
+function switchTitle(inner){
+    let title = document.getElementsByTagName('title');
+    console.log(title[0].innerHTML);
+    title[0].innerHTML = "Discord | "+inner;
+    console.log('a');
+}
 function hideError(){
     document.getElementById("error").style.display='none';
 }
@@ -84,7 +91,10 @@ function switchDm(){
         lasttop.style.display='none';
         newtop.style.display='block';
         lastidx=id;
+        switchTitle(name[0].innerHTML);
         showTopUsername();
+    }else{
+        switchTitle('친구');
     }
 }
 function addFriend(){
@@ -274,9 +284,4 @@ function userSelector(){
 
     switchDm();
 }
-
-
-
-
-
 
