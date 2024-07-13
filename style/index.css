@@ -916,7 +916,7 @@ input::placeholder{
     .activity{
         display: none;
     }
-    .rectangle-div1,.allfriends,.addfriends,.request,.block{
+    .rectangle-div1,.allfriends,.addfriends,.request,.block,.chatdisplay{
         width: calc(100% - 415px);
     }
 }
@@ -924,7 +924,7 @@ input::placeholder{
     .activity{
         display: block;
     }
-    .rectangle-div1,.allfriends,.addfriends.request,.block{
+    .rectangle-div1,.allfriends,.addfriends.request,.block,.chatdisplay{
         width: calc(calc(100% - 415px) - 400px);
     }
 }
