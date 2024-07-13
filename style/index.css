@@ -7,12 +7,6 @@
     object-fit: cover;
     display: none;
 }
-body{
-    font-family: 'Whitney', sans-serif;
-    font-family: 'Whitney Semibold', sans-serif;
-    font-family: 'Whitney Book', sans-serif;
-    font-family: 'Whitney Light', sans-serif;
-}
 .frame-child {
     position: absolute;
     top: 65px;
@@ -211,7 +205,6 @@ body{
 .div1 {
     position: relative;
     font-weight: 500;
-    font-size: 16.3px;
 }
 
 .component-6 {
@@ -299,12 +292,15 @@ body{
     position: absolute;
     top: 0px;
     left: 128px;
-    width: 538px;
+    width: 100%;
     height: 32px;
     transition-duration: 1s;
     transition: ease-in-out;
 }
-
+.component-6-parent > div{
+    box-sizing: border-box;
+    display:inline-block;
+}
 .frame-inner {
     position: absolute;
     top: 1px;
@@ -328,14 +324,13 @@ body{
     position: absolute;
     top: 0px;
     left: 39px;
-    font-size: 18px
 }
 
 .humen-parent {
     position: absolute;
     top: 5px;
     left: 0px;
-    width: 76px;
+    width: 100px;
     height: 24px;
     font-size: 20px;
     color: #fbfdff;
@@ -345,7 +340,7 @@ body{
     position: absolute;
     top: 16px;
     left: 347px;
-    width: 666px;
+    width: 100%;
     height: 32px;
     font-size: 18px;
     color: #bcbdc4;

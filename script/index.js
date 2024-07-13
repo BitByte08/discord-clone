@@ -18,7 +18,6 @@ fetch('data.json').then((response)=>{return response.json()})
 .then((obj)=>{
     obj.user.map((item)=>{
         idx++;
-        console.log(item);
         if(item['state']==="online"){
             DMlist[0].innerHTML+=`<div class="dm1" id="no">
                                     <div class="select1">
@@ -33,7 +32,9 @@ fetch('data.json').then((response)=>{return response.json()})
                                         <span>${item['name']}</span>
                                         <p>온라인</p>
                                     </div>`;
-            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;">
+            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;"onKeyPress="if(event.keyCode==13){addchatnode()}">
+                                        <div class="add-btn-child2"></div>
+                                        <img src="source/icon/addchat.svg"><input type="text" id = "us${item['id']}"placeholder="@${item['name']}에게 메시지 보내기">
                                     </div>`;
             Onlinelist[0].innerHTML+=listdiv;
             Alllist[0].innerHTML+=listdiv;
@@ -51,19 +52,55 @@ fetch('data.json').then((response)=>{return response.json()})
                             <span>${item['name']}</span>
                             <p>오프라인</p>
                         </div>`;
-            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;">
+            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;"onKeyPress="if(event.keyCode==13){addchatnode()}">
                                         <div class="add-btn-child2"></div>
-                                        <img src="source/icon/addchat.svg"><input type="text" placeholder="@${item['name']}에게 메시지 보내기" onKeyPress="if(event.keyCode==13){addchatnode()}">
+                                        <img src="source/icon/addchat.svg"><input type="text" id = "us${item['id']}"placeholder="@${item['name']}에게 메시지 보내기">
                                     </div>`;
             Alllist[0].innerHTML+=listdiv2;
         }
     })
     all();
 });
-
 function addchatnode(){
-    let thischat = this.parentNode();
-    console.log("add");
+    var today = new Date();
+    let year = today.getFullYear(),month = (today.getMonth()+1),date = today.getDate();
+    today = (year*10000)+(month+1)*100+date;
+    let todaystr = year + "년 " +month+"월 " + date+"일";
+    let onchat = document.getElementById(rastchatidx);
+    let onchatnode = onchat.getElementsByClassName("chatlist");
+    let inputidx = rastchatidx.replace('user','us');
+    let inputchat = document.getElementById(inputidx);
+    if(onchatnode.length==0){
+        onchat.innerHTML+=`<div class="chatlist"><div class="day" id="${(today)}">
+                                    <fieldset><legend>${todaystr}</legend></fieldset>
+                                    <div class="chatNode">
+                                        <img src="source/frofile/discord_blue.png">
+                                        <span>admin</span>
+                                        <div class="chatp">
+
+                                            <p>${inputchat.value}</p>
+                                        </div>
+                                    </div>
+                                </div></div>`;
+    }else if(document.getElementById(today)===null){
+        let list = onchat.getElementsByClassName('chatlist');
+        list[0].innerHTML+=`<div class="chatlist"><div class="day" id="${today}">
+        <fieldset><legend>${todaystr}</legend></fieldset>
+        <div class="chatNode">
+            <img src="source/frofile/discord_blue.png">
+            <span>admin</span>
+            <div class="chatp">
+
+                <p>${inputchat.value}</p>
+            </div>
+        </div>
+    </div></div>`;
+    }
+    else{
+        let chatp = onchatnode[0].getElementsByClassName("chatp");
+        chatp[0].innerHTML += `<p>${inputchat.value}</p>`;
+    }
+    inputchat.value="";
 }
 
 function all(){
@@ -113,11 +150,8 @@ function dmreader(){
         let name = user.getElementsByClassName('name');
         let id = name[0].id;
         var chatdis = document.getElementsByClassName('chat');
-        console.log(chatdis[0]);
         let newchat = chatdis[0].querySelector("#"+id);
         let lastchat = chatdis[0].querySelector("#"+rastchatidx);
-        console.log(newchat);
-        console.log(lastchat);
         lastchat.style.display='none';
         newchat.style.display='block';
         rastchatidx=id;
@@ -137,7 +171,7 @@ function useradd(){
     DMlist[0].innerHTML+=`<div class="dm1" id="no">
                                     <div class="select1">
                                     </div>
-                                    <div class="name" id="user${idx++}">${name.value}</div>
+                                    <div class="name" id="user${idx}">${name.value}</div>
                                     <img class="user-frofile-img" alt="" src="source/frofile/discord_blue.png">
                                     <img class="component-12-icon1" alt="" src="source/frofile_icon/Online_no.svg">
                                 </div>`;
@@ -149,6 +183,10 @@ function useradd(){
                 </div>`;
     Onlinelist[0].innerHTML+=listdiv;
     Alllist[0].innerHTML+=listdiv;
+    Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${idx}" style="display: none;"onKeyPress="if(event.keyCode==13){addchatnode()}">
+                                        <div class="add-btn-child2"></div>
+                                        <img src="source/icon/addchat.svg"><input type="text" id = "us${idx++}"placeholder="@${name.value}에게 메시지 보내기">
+                                    </div>`;
     all();
     document.getElementById("username").value="";
 }
