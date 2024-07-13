@@ -7,7 +7,12 @@
     object-fit: cover;
     display: none;
 }
-
+body{
+    font-family: 'Whitney', sans-serif;
+    font-family: 'Whitney Semibold', sans-serif;
+    font-family: 'Whitney Book', sans-serif;
+    font-family: 'Whitney Light', sans-serif;
+}
 .frame-child {
     position: absolute;
     top: 65px;
@@ -205,8 +210,8 @@
 
 .div1 {
     position: relative;
-    font-size: 16px;
     font-weight: 500;
+    font-size: 16.3px;
 }
 
 .component-6 {
@@ -604,6 +609,7 @@ body {
     min-width: 1200px;
     min-height: 500px;
     max-height: 1080px;
+    max-width: 1920px;
 }
 hr{
     border: 1px solid #414248;
@@ -844,7 +850,7 @@ hr{
 .addfriends > button{
     position: relative;
     top : -38px;
-    right: calc(-100% + 100px);
+    right: calc(-100% + 110px);
     border: none;
     background-color: #5a67e9;
     color: white;
@@ -991,3 +997,4 @@ input::placeholder{
 #mainoff{
     display: none;
 }
+
