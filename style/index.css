@@ -847,15 +847,20 @@ hr{
     height: 100%;
     padding: 20px 50px 0 50px;
 }
-.addfriends > button{
-    position: relative;
-    top : -38px;
-    right: calc(-100% + 110px);
+div > button{
     border: none;
     background-color: #5a67e9;
     color: white;
     border-radius: 2px;
     height: 30px;
+    margin: auto;
+
+}
+.addfriends > div{
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    background-color: #202226;
 }
 .rectangle-div1 > input{
     padding-left: 8px;
@@ -879,9 +884,9 @@ hr{
     font-size: 16px;
     margin-bottom: 20px;
 }
-.addfriends > input{
+div > #username{
     padding-left: 8px;
-    width: 100%;
+    width: calc(100% - 150px);
     height: 45px;
     border: none;
     padding-left: 8px;
