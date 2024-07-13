@@ -24,7 +24,35 @@
     width: 24px;
     height: 24px;
 }
-
+.topusername{
+    position: absolute;
+    top: 7.5px;
+    left: 347px;
+    width: 100%;
+}
+#topon{
+    display: block;
+}
+#topoff{
+    display: none;
+}
+#toponuser{
+    display: block;
+}
+#topoffuser{
+    display: none;
+}
+.topusername > div > img{
+    width: 45px;
+    border-radius: 23px;
+}
+.topusername > div > span{
+    color: white;
+    font-size: 22px;
+    position: relative;
+    top: -12px;
+    left: 5px;
+}
 .frame-item {
     position: fixed;
     height: calc(100% + 147px);
@@ -748,6 +776,8 @@ hr{
     display: flex;
     flex-direction:column-reverse;
     height: calc(100% - 55px);
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 .day{  
     box-sizing: border-box;

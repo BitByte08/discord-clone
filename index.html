@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width">
 
     <link rel="stylesheet" href="style/index.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 </head>
 
 <body style="overflow-x: hidden" onseletstart = "return false" >
@@ -16,18 +16,18 @@
                 <span>구현 안된 기능</span>
                 <p>아직 이 기능은 사용할 수 없어요.</p>
                 <div>
-                    <button onclick="errorend()">확인</button>
+                    <button onclick="hideError()">확인</button>
                 </div>
             </div>
         </div>
         <div class="info" id="mainon">
             <div class="rectangle-div1" id="divon">
-                <input type="text" placeholder="검색하기">
+                <input type="text" placeholder="검색하기" id="findUser" onkeyup="searchOnlineUser()">
                 <svg class="icon_c18ec9_visible_c18ec9" aria-label="검색하기" aria-hidden="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" clip-rule="evenodd" class=""></path></svg>
                 
             </div>
             <div class="allfriends" id="divoff">
-                <input type="text" placeholder="검색하기">
+                <input type="text" placeholder="검색하기" id="findUserAll" onkeyup="searchOfflineUser()">
                 <svg class="icon_c18ec9_visible_c18ec9" aria-label="검색하기" aria-hidden="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" clip-rule="evenodd" class=""></path></svg>
                 
             </div>
@@ -35,13 +35,13 @@
                 <span>현재 친구 요청을 받을 수 없어요.</span>
             </div>
             <div class="block" id="divoff">
-                <span>차단한 친구가 아직 없어요.</span>
+                <span>아직은 차단 기능이 없어요.</span>
             </div>
             <div class="addfriends" id="divoff">
                 <h3>친구 추가하기</h3>
                 <p>사용자명을 입력하면 가상으로 친구를 추가할 수 있어요. 추가된 친구는 항상 온라인을 유지해요. (최대 10명까지 지원)</p>
                 <div><input type="text" id="username" placeholder="사용자명을 사용하여 추가할 수 있어요.">
-                <button type="button" onclick="useradd()">친구 요청 보내기</button></div>
+                <button type="button" onclick="addFriend()">친구 요청 보내기</button></div>
             </div>
             <div class = "activity">
                 <h3>현재 활동 중</h3>
@@ -68,7 +68,7 @@
                     <div class="name">친구</div>
                 </div>
                 <div class="dm-title">
-                    <img class="dm-title-child" alt="DM 생성" title="DM 생성" src="source/icon/add2.svg" onclick="showerror()">
+                    <img class="dm-title-child" alt="DM 생성" title="DM 생성" src="source/icon/add2.svg" onclick="showError()">
 
                     <b class="b">다이렉트 메세지</b>
                 </div>
@@ -84,10 +84,12 @@
                 <div class="finder-child">
                 </div>
                 <div class="div">
-                    <input type="text" class="div2" placeholder="대화 찾기 또는 시작하기" readonly onclick="showerror()">
+                    <input type="text" class="div2" placeholder="대화 찾기 또는 시작하기" readonly onclick="showError()">
                 </div>
             </div>
-            <div class="frame-parent">
+            <div class="topusername" id="topoff">
+            </div>
+            <div class="frame-parent" id="topon">
                 <div class="component-6-parent">
                     <div class="component-6" id="onmenu">
                         <div class="div1">온라인</div>
@@ -146,12 +148,12 @@
                         <img class="vector-icon1" alt="" src="source/icon/add.svg">
 
                     </div>
-                    <img class="main-parent" alt="" src="source/icon/discover.svg" onclick="showerror()">
+                    <img class="main-parent" alt="" src="source/icon/discover.svg" onclick="showError()">
 
                 </div>
                 <img class="line-icon" alt="" src="source/Line.svg">
 
-                <div class="main-parent" onclick="showerror()">
+                <div class="main-parent" onclick="showError()">
                     <div class="add-btn-child">
                     </div>
                     <img class="component-4-item" alt="" src="source/icon/download.svg">
