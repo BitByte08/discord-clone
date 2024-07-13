@@ -119,8 +119,6 @@ function searchOnlineUser(){
     }
     for(let User=0;User<OnlineUser.length;User++){
         let Username = OnlineUser[User].getElementsByTagName('span');
-        console.log(Username[0].innerHTML);
-        
         if(Username[0].innerHTML.indexOf(finder.value)===-1){
             OnlineUser[User].style.display='none';
         }else{
@@ -132,8 +130,6 @@ function searchOfflineUser(){
     let OnlineUser = AllUserList[0].getElementsByClassName('onlineuser');
     let OfflineUser = AllUserList[0].getElementsByClassName('offlineuser');
     let finder = document.getElementById('findUserAll');
-    console.log(finder);
-    console.log(finder.value);
     if(finder.value===""){
         for(let User=0;User<OnlineUser.length;User++){
             OnlineUser[User].style.display='block';
@@ -144,8 +140,6 @@ function searchOfflineUser(){
     }else{
         for(let User=0;User<OnlineUser.length;User++){
             let Username = OnlineUser[User].getElementsByTagName('span');
-            console.log(Username[0].innerHTML);
-            
             if(Username[0].innerHTML.indexOf(finder.value)===-1){
                 OnlineUser[User].style.display='none';
             }
@@ -155,8 +149,6 @@ function searchOfflineUser(){
         }
         for(let User=0;User<OfflineUser.length;User++){
             let Username = OfflineUser[User].getElementsByTagName('span');
-            console.log(Username[0].innerHTML);
-            
             if(Username[0].innerHTML.indexOf(finder.value)===-1){
                 OfflineUser[User].style.display='none';
             }
