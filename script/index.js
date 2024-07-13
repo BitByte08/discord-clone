@@ -12,6 +12,7 @@ function showerror(){
 let DMlist = document.getElementsByClassName('rectangle-parent');
 let Onlinelist = document.getElementsByClassName('rectangle-div1');
 let Alllist = document.getElementsByClassName('allfriends');
+let Chatlist = document.getElementsByClassName('chat');
 
 fetch('data.json').then((response)=>{return response.json()})
 .then((obj)=>{
@@ -32,6 +33,8 @@ fetch('data.json').then((response)=>{return response.json()})
                                         <span>${item['name']}</span>
                                         <p>온라인</p>
                                     </div>`;
+            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;">
+                                    </div>`;
             Onlinelist[0].innerHTML+=listdiv;
             Alllist[0].innerHTML+=listdiv;
         }else{
@@ -48,11 +51,21 @@ fetch('data.json').then((response)=>{return response.json()})
                             <span>${item['name']}</span>
                             <p>오프라인</p>
                         </div>`;
+            Chatlist[0].innerHTML+=`<div class="chatdisplay" id="user${item['id']}" style="display: none;">
+                                        <div class="add-btn-child2"></div>
+                                        <img src="source/icon/addchat.svg"><input type="text" placeholder="@${item['name']}에게 메시지 보내기" onKeyPress="if(event.keyCode==13){addchatnode()}">
+                                    </div>`;
             Alllist[0].innerHTML+=listdiv2;
         }
     })
     all();
 });
+
+function addchatnode(){
+    let thischat = this.parentNode();
+    console.log("add");
+}
+
 function all(){
     var a = document.querySelectorAll('.dm1');
     for(var i=0;i<a.length;i++){
@@ -165,33 +178,3 @@ function add(){
     a.setAttribute('id','offmenu');
     this.setAttribute('id','onmenu');
 }
-
-
-// `<div class="dm1">
-//     <div class="select">
-//     </div>
-//     <div class="name">Name</div>
-//     <img class="user-frofile-img" alt="" src="/다운로드 (3).png">
-//     <img class="component-12-icon1" alt="" src="/source/frofile_icon/Offline.svg">
-// </div>`
-// `<div class="dm1">
-//     <div class="select">
-//     </div>
-//     <div class="name">Name</div>
-//     <img class="user-frofile-img" alt="" src="/다운로드 (3).png">
-//     <img class="component-12-icon" alt="" src="/source/frofile_icon/Online.svg">
-// </div>`
-// `<div class="dm1">
-//                 <div class="select2">
-//                 </div>
-//                 <div class="name">Name</div>
-//                 <img class="user-frofile-img" alt="" src="/다운로드 (3).png">
-//                 <img class="component-12-icon" alt="" src="/source/frofile_icon/Online_no.svg">
-//             </div>`
-// `<div class="dm1">
-//     <div class="select2">
-//     </div>
-//     <div class="name">Name</div>
-//     <img class="user-frofile-img" alt="" src="/다운로드 (3).png">
-//     <img class="component-12-icon1" alt="" src="/source/frofile_icon/Offline_no.svg">
-// </div>`
